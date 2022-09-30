@@ -22,7 +22,7 @@ class VideoWeb extends WebController
     {
         // Récupération des vidéos par le modèle
         $videos = $this->videoModel->getVideos();
-        return Template::render("./views/video/home.php", array("videos" => $videos));
+        return Template::render("./views/video/home.php", ["videos" => $videos]);
     }
 
     /**
@@ -38,6 +38,6 @@ class VideoWeb extends WebController
             $this->redirect("/");
         }
 
-        return Template::render("./views/video/tv.php", array("video" => $video));
+        return Template::render("./views/video/tv.php", ["video" => $video]);
     }
 }

@@ -18,7 +18,7 @@ class SampleAccount
          * ICI NOUS APPELLERIONS LA BDD AFIN DE VÉRIFIER LE COMPTE
          */
 
-        SessionHelpers::login(array("username" => "Utilisateur démo", "email" => $username));
+        SessionHelpers::login((object)array("username" => "Utilisateur démo", "email" => $username));
         return true;
     }
 }

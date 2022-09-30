@@ -1,6 +1,19 @@
 <?php
 
 namespace models;
+
+class Video
+{
+    public $name;
+    public $videoId;
+
+    function __construct($videoId, $name)
+    {
+        $this->videoId = $videoId;
+        $this->name = $name;
+    }
+}
+
 /**
  * @deprecated
  * Class SampleVideo
@@ -11,16 +24,21 @@ namespace models;
  */
 class SampleVideo
 {
-    private array $videos = array(
-        array("videoId" => "BcgsOgjHgWA", "name" => "Video 1"),
-        array("videoId" => "lcOxhH8N3Bo", "name" => "Video 2"),
-        array("videoId" => "jTuBnZrLbq0", "name" => "Video 3"),
-        array("videoId" => "M2VtfZDOcHQ", "name" => "Video 4"),
-        array("videoId" => "i1iIaSbK9bg", "name" => "Video 5"),
-        array("videoId" => "MTaHw-S6IDo", "name" => "Video 6"),
-        array("videoId" => "KfMCApWc5xE", "name" => "Video 7"),
-        array("videoId" => "igtN49I1CtM", "name" => "Video 8")
-    );
+    private array $videos;
+
+    function __construct()
+    {
+        $this->videos = array(
+            new Video("BcgsOgjHgWA", "Video 1"),
+            new Video("lcOxhH8N3Bo", "Video 2"),
+            new Video("jTuBnZrLbq0", "Video 3"),
+            new Video("M2VtfZDOcHQ", "Video 4"),
+            new Video("i1iIaSbK9bg", "Video 5"),
+            new Video("MTaHw-S6IDo", "Video 6"),
+            new Video("KfMCApWc5xE", "Video 7"),
+            new Video("igtN49I1CtM", "Video 8")
+        );
+    }
 
     function getVideos(): array
     {
@@ -30,7 +48,7 @@ class SampleVideo
     function getByVideoId($id)
     {
         $result = array_values(array_filter($this->videos, function ($video) use ($id) {
-            return $video["videoId"] === $id;
+            return $video->videoId === $id;
         }));
 
         return array_pop($result);

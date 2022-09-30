@@ -26,7 +26,7 @@ class Account extends WebController
             }
         }
 
-        return Template::render("views/account/login.php", array());
+        return Template::render("views/account/login.php", []);
     }
 
     function logout()
@@ -37,6 +37,6 @@ class Account extends WebController
 
     function me(): string
     {
-        return Template::render("views/account/me.php", array());
+        return Template::render("views/account/me.php", []);
     }
 }

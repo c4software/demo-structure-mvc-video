@@ -1,3 +1,8 @@
+<?php
+
+use utils\SessionHelpers;
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -20,7 +25,7 @@
         ?>
         <ul class="nav nav-pills">
             <?php
-            if(\utils\SessionHelpers::isLogin()){
+            if(SessionHelpers::isLogin()){
                 echo '<li class="nav-item"><a href="/me" class="nav-link">Mon compte</a></li>';
             } else {
                 echo '<li class="nav-item"><a href="/login" class="nav-link">Connexion</a></li>';

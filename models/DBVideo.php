@@ -23,6 +23,6 @@ class DBVideo extends SQL
 
         $stmt = $this->getPdo()->prepare("SELECT * FROM video WHERE videoId = ?");
         $stmt->execute([$videoId]);
-        return $stmt->fetch(\PDO::FETCH_ASSOC);
+        return $stmt->fetch(\PDO::FETCH_OBJ);
     }
 }

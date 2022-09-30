@@ -20,7 +20,7 @@ class VideoApi extends ApiController
 
     function sample(): bool|string
     {
-        return JsonHelpers::stringify(array("Ceci est un exemple", "de", "tableau"));
+        return JsonHelpers::stringify(["Ceci est un exemple", "de", "tableau"]);
     }
 
     function videos(): bool|string
